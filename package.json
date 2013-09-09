@@ -1,0 +1,23 @@
+{
+  "name": "esfs",
+  "version": "0.1.0",
+  "description": "utility to use google map easily",
+  "main": "gmaputil.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yupitel/gmaputil.git"
+  },
+  "readmeFilename": "Readme.md",
+  "keywords": [
+    "Google Maps API",
+    "Directions API",
+    "Distance Matrix API",
+    "Elevation API",
+    "Geocoding API"
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "author": "Shunsuke <qfoori@gmail.com>",
+  "license": "MIT"
+}
