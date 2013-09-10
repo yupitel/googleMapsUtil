@@ -1,11 +1,11 @@
 {
-  "name": "esfs",
+  "name": "googlemapsutil",
   "version": "0.1.0",
   "description": "utility to use google map easily",
   "main": "gmaputil.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yupitel/gmaputil.git"
+    "url": "git://github.com/yupitel/googleMapsUtil.git"
   },
   "readmeFilename": "Readme.md",
   "keywords": [
