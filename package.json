@@ -1,6 +1,6 @@
 {
   "name": "googlemapsutil",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "utility to use google map easily",
   "main": "gmaputil.js",
   "repository": {
@@ -16,7 +16,7 @@
     "Geocoding API"
   ],
   "directories": {
-    "example": "example"
+    "test": "test"
   },
   "author": "Shunsuke <qfoori@gmail.com>",
   "license": "MIT"
