@@ -2,18 +2,21 @@
   "name": "googlemapsutil",
   "version": "0.1.1",
   "description": "utility to use google map easily",
-  "main": "gmaputil.js",
+  "main": "googlemapsutil.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/yupitel/googleMapsUtil.git"
   },
   "readmeFilename": "Readme.md",
   "keywords": [
-    "Google Maps API",
-    "Directions API",
-    "Distance Matrix API",
-    "Elevation API",
-    "Geocoding API"
+    "google",
+    "maps",
+    "api"
+    "directions",
+    "distance matrix",
+    "elevationI",
+    "geocoding",
+    "reverse"
   ],
   "directories": {
     "test": "test"
