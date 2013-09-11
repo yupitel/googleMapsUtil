@@ -1,6 +1,6 @@
 {
   "name": "googlemapsutil",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "utility to use google map easily",
   "main": "googlemapsutil.js",
   "repository": {
@@ -10,11 +10,11 @@
   "readmeFilename": "Readme.md",
   "keywords": [
     "google",
-    "maps",
+    "map",
     "api",
     "directions",
     "distance matrix",
-    "elevationI",
+    "elevation",
     "geocoding",
     "reverse"
   ],
