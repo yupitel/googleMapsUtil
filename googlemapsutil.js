@@ -8,18 +8,21 @@ var objectutil     = require('./lib/objectutil.js')
   , Directions     = require('./lib/directions.js')
   , Distancematrix = require('./lib/distancematrix.js')
   , Elevation      = require('./lib/elevation.js')
-  , Geocoding      = require('./lib/geocoding.js');
+  , Geocoding      = require('./lib/geocoding.js')
+  , Timezone       = require('./lib/timezone.js');
 
 var directions     = new Directions()
   , distancematrix = new Distancematrix()
   , elevation      = new Elevation()
-  , geocoding      = new Geocoding();
+  , geocoding      = new Geocoding()
+  , timezone       = new Timezone();
 
 var services = [];
 services.push(directions);
 services.push(distancematrix);
 services.push(elevation);
 services.push(geocoding);
+services.push(timezone);
 
 var gmaputil = {  
   setProxy: function(proxy, port) {
@@ -59,7 +62,11 @@ var gmaputil = {
   },
   reverseGeocoding: function(lat, lng, options, cb, sensor, isHttps, isRequest) {
     geocoding.reverseGeocoding(lat, lng, options, cb, sensor, isHttps, isRequest);
+  },
+  timezone: function(lat, lng, timestamp, options, cb, sensor, isHttps, isRequest) {
+    timezone.timezone(lat, lng, timestamp, options, cb, sensor, isHttps, isRequest);
   }
+
 };
 
 module.exports = gmaputil;
@@ -68,4 +75,5 @@ module.exports.Directions     = Directions;
 module.exports.Distancematrix = Distancematrix;
 module.exports.Elevation      = Elevation;
 module.exports.Geocoding      = Geocoding;
+module.exports.Timezone       = Timezone;
 

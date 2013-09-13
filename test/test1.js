@@ -35,8 +35,10 @@ gmaputil.geocoding('Torun', {components: {administrative_area:'TX', country:'US'
 gmaputil.geocoding(null, {components: {route:'Annegatan', administrative_area:'Helsinki',country:'Finland'}}, cb);
 
 // reverse geocoding
-gmaputil.reverseGeocoding(40.714224,-73.961452, null, cb);
+gmaputil.reverseGeocoding(40.714224, -73.961452, null, cb);
 
+// time zone
+gmaputil.timezone(39.6034810, -119.6822510, 1331161200, null, cb);
 
 // change output format
 // xml
