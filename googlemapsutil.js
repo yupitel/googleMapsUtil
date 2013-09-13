@@ -42,23 +42,23 @@ var gmaputil = {
       services[i].setOutput(type);
     }
   },
-  directions: function(origin, destination, options, cb, sensor, isHttps) {
-    directions.directions(origin, destination, options, cb, sensor, isHttps);
+  directions: function(origin, destination, options, cb, sensor, isHttps, isRequest) {
+    directions.directions(origin, destination, options, cb, sensor, isHttps, isRequest);
   },
-  distancematrix: function(origins, destinations, options, cb, sensor, isHttps) {
-    distancematrix.distancematrix(origins, destinations, options, cb, sensor, isHttps);
+  distancematrix: function(origins, destinations, options, cb, sensor, isHttps, isRequest) {
+    distancematrix.distancematrix(origins, destinations, options, cb, sensor, isHttps, isRequest);
   },
-  locations: function(locations, options, cb, sensor, isHttps) {
-    elevation.locations(locations, options, cb, sensor, isHttps);
+  locations: function(locations, options, cb, sensor, isHttps, isRequest) {
+    elevation.locations(locations, options, cb, sensor, isHttps, isRequest);
   },
-  path: function(path, sample, options, cb, sensor, isHttps) {
-    elevation.path(path, sample, options, cb, sensor, isHttps);
+  path: function(path, sample, options, cb, sensor, isHttps, isRequest) {
+    elevation.path(path, sample, options, cb, sensor, isHttps, isRequest);
   },
-  geocoding: function(address, options, cb, sensor, isHttps) {
-    geocoding.geocoding(address, options, cb, sensor, isHttps);
+  geocoding: function(address, options, cb, sensor, isHttps, isRequest) {
+    geocoding.geocoding(address, options, cb, sensor, isHttps, isRequest);
   },
-  reverseGeocoding: function(lat, lng, options, cb, sensor, isHttps) {
-    geocoding.reverseGeocoding(lat, lng, options, cb, sensor, isHttps);
+  reverseGeocoding: function(lat, lng, options, cb, sensor, isHttps, isRequest) {
+    geocoding.reverseGeocoding(lat, lng, options, cb, sensor, isHttps, isRequest);
   }
 };
 

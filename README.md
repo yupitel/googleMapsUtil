@@ -11,7 +11,7 @@ wrap Google Maps API
 
 ## [Directions API](https://developers.google.com/maps/documentation/directions/ "directions")
 - call Directions api
-- directions(origin, destination, options, cb, sensor, isHttps);
+- directions(origin, destination, options, cb, sensor, isHttps, isRequest);
 - parameter
     - origin: origin parameter (required)
         - input data type
@@ -31,10 +31,11 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
 ## [Distance Matrix API](https://developers.google.com/maps/documentation/distancematrix/ "distance matrix")
 - call Distance Matrix api
-- distancematrix(origins, destinations, options, cb, sensor, isHttps);
+- distancematrix(origins, destinations, options, cb, sensor, isHttps, isRequest);
 - parameter
     - origins: origin parameter (required)
         - origin or array of origin
@@ -55,10 +56,11 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
 ## [Elevation API](https://developers.google.com/maps/documentation/elevation/ "elevation")
 ### Positional Requests
-- locations(locations, options, cb, sensor, isHttps)
+- locations(locations, options, cb, sensor, isHttps, isRequest)
 - parameter
     - locations: location parameter (required)
         - location or array of location
@@ -72,9 +74,10 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
 ### Sampled Path Requests
-- path(path, samples, options, cb, sensor, isHttps) 
+- path(path, samples, options, cb, sensor, isHttps, isRequest) 
 - parameter
     - path: path parameter (required)
         - path or array of path
@@ -89,10 +92,10 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
-
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
 ## [Geocoding API](https://developers.google.com/maps/documentation/geocoding/ "geocoding")
-- geocoding(address, options, cb, sensor, isHttps)
+- geocoding(address, options, cb, sensor, isHttps, isRequest)
 - parameter
     - address: address parameter (required)
         - address text
@@ -104,9 +107,9 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
-
-- reverseGeocoding(lat, lng, options, cb, sensor, isHttps)
+- reverseGeocoding(lat, lng, options, cb, sensor, isHttps, isRequest)
 - parameter
     - lat: latitude (required)
     - lng: longitude (required)
@@ -118,6 +121,7 @@ wrap Google Maps API
     - cb: call back function
     - sensor: sensor parameter (default false)
     - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
 
 ## Optional API
 - setProxy
@@ -139,39 +143,46 @@ wrap Google Maps API
     - xml or json
 
 ## Usage 1
-
     // call api
     var gmaputil = require('googlemapsutil');
-
+    
+    // call api from class object
+    var cb = function(err, result) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(result);
+    };
+    
     // directions api sample
-    gmaputil.directions('Toronto', 'Montreal');
-    gmaputil.directions('Toronto', 'Montreal', {avoid: 'highways', mode: 'bicycling'});
-
+    gmaputil.directions('Toronto', 'Montreal', null, cb);
+    gmaputil.directions('Toronto', 'Montreal', {avoid: 'highways', mode: 'bicycling'}, cb);
+    
     // distance matrix api sample
-    gmaputil.distancematrix(['Vancouver+BC', 'Seattle'], ['San+Francisco', 'Victoria+BC'], {mode: 'bicycling', language: 'fr-FR'});
-
+    gmaputil.distancematrix(['Vancouver+BC', 'Seattle'], ['San+Francisco', 'Victoria+BC'], {mode: 'bicycling', language: 'fr-FR'}, cb);
+    
     // elevation api sample
     // locations
-    gmaputil.locations([{lat:39.7391536, lng:-104.9847034},{lat:36.455556,lng:-116.866667}]);
+    gmaputil.locations([{lat:39.7391536, lng:-104.9847034},{lat:36.455556,lng:-116.866667}], null, cb);
     // this is same with above
-    gmaputil.locations('39.7391536,-104.9847034|36.455556,-116.866667');
-
+    gmaputil.locations('39.7391536,-104.9847034|36.455556,-116.866667', null, cb);
+    
     // path
-    gmaputil.path([{lat: 36.578581, lng:-118.291994},{lat:36.23998,lng:-116.83171}],3);
-
+    gmaputil.path([{lat: 36.578581, lng:-118.291994},{lat:36.23998,lng:-116.83171}],3, null, cb);
+    
     // geocoding api sample
     // geocoding
-    gmaputil.geocoding('1600+Amphitheatre+Parkway,+Mountain+View,+CA');
-
-    // geocoding with components filter
-    gmaputil.geocoding('Torun', {components: {administrative_area:'TX', country:'US'}});
-    // geocoding components filter only
-    gmaputil.geocoding(null, {components: {route:'Annegatan', administrative_area:'Helsinki',country:'Finland'}});
-
-    // reverse geocoding
-    gmaputil.reverseGeocoding(40.714224,-73.961452);
+    gmaputil.geocoding('1600+Amphitheatre+Parkway,+Mountain+View,+CA', null, cb);
     
-
+    // geocoding with components filter
+    gmaputil.geocoding('Torun', {components: {administrative_area:'TX', country:'US'}}, cb);
+    // geocoding components filter only
+    gmaputil.geocoding(null, {components: {route:'Annegatan', administrative_area:'Helsinki',country:'Finland'}}, cb);
+    
+    // reverse geocoding
+    gmaputil.reverseGeocoding(40.714224,-73.961452, null, cb);
+    
+    
     // change output format
     // xml
     gmaputil.setOutput('xml');
