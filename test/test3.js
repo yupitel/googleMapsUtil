@@ -7,7 +7,7 @@ var cb = function(err, result) {
   console.log(result);
 };
 
-/*
+
 var Directions = require('../googlemapsutil').Directions;
 directions = new Directions();
 // directions api sample
@@ -29,7 +29,7 @@ elevation.locations('39.7391536,-104.9847034|36.455556,-116.866667', null, cb, n
 
 // path
 elevation.path([{lat: 36.578581, lng:-118.291994},{lat:36.23998,lng:-116.83171}],3, null, cb, null, null, false);
-*/
+
 // geocoding api sample
 var Geocoding  = require('../googlemapsutil').Geocoding;
 geocoding = new Geocoding();
