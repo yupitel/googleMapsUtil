@@ -1,5 +1,5 @@
 // call api
-var gmaputil = require('googlemapsutil');
+var gmaputil = require('../googlemapsutil');
 
 // call api from class object
 var cb = function(err, result) {

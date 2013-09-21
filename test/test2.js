@@ -8,19 +8,19 @@ var cb = function(err, result) {
 };
 
 
-var Directions = require('googlemapsutil').Directions;
+var Directions = require('../googlemapsutil').Directions;
 directions = new Directions();
  // directions api sample
 directions.directions('Toronto', 'Montreal', null, cb);
 directions.directions('Toronto', 'Montreal', {avoid: 'highways', mode: 'bicycling'}, cb);
 
 // distance matrix api sample
-var Distancematrix = require('googlemapsutil').Distancematrix;
+var Distancematrix = require('../googlemapsutil').Distancematrix;
 distancematrix = new Distancematrix();
 distancematrix.distancematrix(['Vancouver+BC', 'Seattle'], ['San+Francisco', 'Victoria+BC'], {mode: 'bicycling', language: 'fr-FR'}, cb);
 
 // elevation api sample    
-var Elevation  = require('googlemapsutil').Elevation;
+var Elevation  = require('../googlemapsutil').Elevation;
 elevation = new Elevation();
 // locations
 elevation.locations([{lat:39.7391536, lng:-104.9847034},{lat:36.455556,lng:-116.866667}], null, cb);
@@ -31,7 +31,7 @@ elevation.locations('39.7391536,-104.9847034|36.455556,-116.866667', null, cb);
 elevation.path([{lat: 36.578581, lng:-118.291994},{lat:36.23998,lng:-116.83171}],3, null, cb);
 
 // geocoding api sample
-var Geocoding  = require('googlemapsutil').Geocoding;
+var Geocoding  = require('../googlemapsutil').Geocoding;
 geocoding = new Geocoding();
 
 // geocoding
