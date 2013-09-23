@@ -46,3 +46,19 @@ geocoding.geocoding(null, {components: {route:'Annegatan', administrative_area:'
 geocoding.reverseGeocoding(40.714224,-73.961452, null, cb, null, null, false);
 
 
+// timezone
+var Timezone  = require('../googlemapsutil').Timezone;
+timezone = new Timezone();
+timezone.timezone(39.6034810, -119.6822510, 1331161200, null, cb, null, false);
+
+timezone.timezone(39.6034810, -119.6822510, 1331766000, null, cb, null, false);
+
+timezone.timezone(39.6034810, -119.6822510, 1331766000, null, cb, null, false);
+
+
+// staticmaps
+var StaticMaps = require('../googlemapsutil').StaticMaps;
+staticmaps = new StaticMaps();
+
+staticmaps.staticmap({center: 'Berkeley,CA', zoom: 14, size: '400x400'}, cb, null, null, false);
+

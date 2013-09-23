@@ -9,13 +9,17 @@ var objectutil     = require('./lib/objectutil.js')
   , Distancematrix = require('./lib/distancematrix.js')
   , Elevation      = require('./lib/elevation.js')
   , Geocoding      = require('./lib/geocoding.js')
-  , Timezone       = require('./lib/timezone.js');
+  , Timezone       = require('./lib/timezone.js')
+  , StaticMaps     = require('./lib/staticmaps.js');
+
 
 var directions     = new Directions()
   , distancematrix = new Distancematrix()
   , elevation      = new Elevation()
   , geocoding      = new Geocoding()
-  , timezone       = new Timezone();
+  , timezone       = new Timezone()
+  , staticmaps     = new StaticMaps();
+
 
 var services = [];
 services.push(directions);
@@ -23,6 +27,8 @@ services.push(distancematrix);
 services.push(elevation);
 services.push(geocoding);
 services.push(timezone);
+services.push(staticmaps);
+
 
 var gmaputil = {  
   setProxy: function(proxy, port) {
@@ -65,7 +71,11 @@ var gmaputil = {
   },
   timezone: function(lat, lng, timestamp, options, cb, sensor, isHttps, isRequest) {
     timezone.timezone(lat, lng, timestamp, options, cb, sensor, isHttps, isRequest);
+  },
+  staticmapas: function(parameters, cb, sensor, isHttps, isRequest) {
+    timezone.staticmaps(parameters, cb, sensor, isHttps, isRequest);
   }
+
 
 };
 
@@ -76,4 +86,5 @@ module.exports.Distancematrix = Distancematrix;
 module.exports.Elevation      = Elevation;
 module.exports.Geocoding      = Geocoding;
 module.exports.Timezone       = Timezone;
+module.exports.StaticMaps     = StaticMaps;
 
