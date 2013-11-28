@@ -1,6 +1,6 @@
 {
   "name": "googlemapsutil",
-  "version": "0.1.5",
+  "version": “0.1.6”,
   "description": "utility to use google map easily",
   "main": "googlemapsutil.js",
   "repository": {
@@ -16,7 +16,8 @@
     "distance matrix",
     "elevation",
     "geocoding",
-    "reverse"
+    "reverse",
+    "static maps"
   ],
   "directories": {
     "test": "test"
