@@ -136,7 +136,7 @@ wrap Google Maps API
     - sensor: sensor parameter (default false)
     - isRequest: if this value is false, return generated url(not do http request)(default null)
 
-## [Static Maps API]https://developers.google.com/maps/documentation/staticmaps/ "staticmaps")
+## [Static Maps API](https://developers.google.com/maps/documentation/staticmaps/ "staticmaps")
 - staticmap(parameters, cb, sensor, isHttps, isRequest)
 - parameter
     - parameters: key value parameter
