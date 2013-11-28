@@ -73,9 +73,8 @@ var gmaputil = {
     timezone.timezone(lat, lng, timestamp, options, cb, sensor, isHttps, isRequest);
   },
   staticmapas: function(parameters, cb, sensor, isHttps, isRequest) {
-    timezone.staticmaps(parameters, cb, sensor, isHttps, isRequest);
+    staticmaps.staticmaps(parameters, cb, sensor, isHttps, isRequest);
   }
-
 
 };
 
