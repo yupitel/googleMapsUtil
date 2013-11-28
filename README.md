@@ -123,6 +123,46 @@ wrap Google Maps API
     - isHttps: https setting (default false)
     - isRequest: if this value is false, return generated url(not do http request)(default null)
 
+
+## [Timezone API](https://developers.google.com/maps/documentation/timezone/ "timezone")
+- timezone(lat, lng, timestamp, options, cb, sensor, isRequest)
+- parameter
+    - lat: latitude (required)
+    - lng: longitude (required)
+    - timestamp: timestamp (required)
+    - options: optional parameter.
+        - set key value object
+    - cb: call back function
+    - sensor: sensor parameter (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
+
+## [Static Maps API]https://developers.google.com/maps/documentation/staticmaps/ "staticmaps")
+- staticmap(parameters, cb, sensor, isHttps, isRequest)
+- parameter
+    - parameters: key value parameter
+    - cb: call back function
+    - sensor: sensor parameter (default false)
+    - isHttps: https setting (default false)
+    - isRequest: if this value is false, return generated url(not do http request)(default null)
+## Optional API
+- setProxy
+    - set proxy for http request
+       - setProxy(proxy, port);
+       - proxy: ptocy
+       - port: port
+
+- setParameter
+    - set parameter to use each api
+    - setParameter(key, value);
+    - This parameter is stored internally and used at every request
+
+- clearParameter
+    - clear stored parameter
+
+- setOutput
+    - set output format
+    - xml or json
+
 ## Optional API
 - setProxy
     - set proxy for http request
